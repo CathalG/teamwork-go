@@ -16,8 +16,13 @@ import (
 )
 
 func main(){
+    //read customers
     count := customerImporter("customers.csv")
-    fmt.Print(count)
+
+    //output result
+    for key, value := range count {
+        fmt.Println("Domain:", key, "=>", "Users:", value)
+    }
 }
 
 func customerImporter (filepath string) map[string]int{
