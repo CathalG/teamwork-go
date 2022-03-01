@@ -21,6 +21,7 @@ var countTests = []CountTest{
     CountTest{"bbb.org", 5},
 }
 
+//Testing domain counts
 func TestCustomerImporter(t *testing.T) {
     for _, test := range countTests {
         if output := customerImporter("customers.csv")[test.domain] ; output != test.expected {
