@@ -1,13 +1,37 @@
 package main
 
-import "testing"
+import(
+    "testing"
+    "strconv"
+)
 
-func TestCustomerImporter(t *testing.T){
+type CountTest struct {
+    domain string; expected int
+}
 
-    got := CustomerImporter("customers.csv")
-    want := 10
+var countTests = []CountTest{
+    CountTest{"github.io", 8},
+    CountTest{"mac.com", 7},
+    CountTest{"bandcamp.com", 3},
+    CountTest{"huffingtonpost.com", 10},
+    CountTest{"google.ca", 7},
+    CountTest{"unc.edu", 8},
+    CountTest{"yelp.com", 4},
+    CountTest{"microsoft.com", 7},
+    CountTest{"bbb.org", 5},
+}
 
-    if got != want {
-        t.Errorf("got %q, wanted %q", got, want)
+func TestCustomerImporter(t *testing.T) {
+    for _, test := range countTests {
+        if output := customerImporter("customers.csv")[test.domain] ; output != test.expected {
+            t.Errorf("Count %q not equal to expected %q", strconv.Itoa(output), strconv.Itoa(test.expected))
+        }
+    }
+}
+
+// Benchmark performance test
+func BenchmarkCustomerImporter(b *testing.B){
+    for i :=0; i < b.N ; i++{
+        customerImporter("customers.csv")
     }
 }
