@@ -34,8 +34,7 @@ Unit and performance tests can be found in:
 ```
 interview_test.go
 ```
-**Running Tests**
-I've included a table-driven test to validate several expected outputs, these can be found/modified in 'countTests'.
+Running Tests: I've included a table-driven test to validate several expected outputs, these can be found/modified in 'countTests'.
 To run:
 ```
 go test
