@@ -1,6 +1,6 @@
 # Teamwork-go
 
-A code assessment submission for Teamwork. Below is the instructions for the backend code challenge:
+A code assessment submission for Teamwork. Details of the backend code challenge below:
 
 *package customerimporter reads from the given customers.csv file and returns a
 sorted (data structure of your choice) of email domains along with the number
