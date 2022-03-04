@@ -43,6 +43,16 @@ There's also a benchmark test to evaluate the performance of customerimporter:
 ```
 go test -bench=.
 ```
-
+Sample benchmark output:
+```
+$ go test -bench=.
+goos: windows
+goarch: amd64
+pkg: teamwork-go-tests
+cpu: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+BenchmarkCustomerImporter-8          470           2399312 ns/op
+PASS
+ok      teamwork-go-tests       1.577s
+```
 
 
